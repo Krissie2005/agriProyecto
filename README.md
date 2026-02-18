@@ -257,3 +257,9 @@ Archivo requirements.txt:
 # 🏁 Conclusión
 
 El proyecto demuestra que la integración de variables geoespaciales, climáticas y demográficas, junto con modelos de ensamble robustos como Random Forest, permite una estimación confiable del riesgo de inundación a nivel parroquial, con alta capacidad de discriminación y sensibilidad en zonas de alto riesgo.
+
+## 👥 Colaboradores
+
+- [@AarónSolanoRivas](https://github.com/aaron1104052005)
+- [@LeandroLamillaCobeña](https://github.com/leandrolamilla07)
+- [@AMavelynsabando](https://github.com/Mavelynsabando)
