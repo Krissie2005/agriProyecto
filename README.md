@@ -161,11 +161,11 @@ Se creó una variable categórica RIESGO_INUNDACION basada en:
 
 ## Clasificación final:
 
-### Bajo
+### 🟢 Bajo
 
-### Medio
+### 🟠 Medio
 
-### Alto
+### 🔴 Alto
 
 # 🤖 Modelos Evaluados
 
