@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sistema de clasificación</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+      padding: 14px 10px;
+      font-size: 18px;
+      font-weight: bold;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    #map {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .my-tooltip{
+      background: rgba(255,255,255,0.95);
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border-radius: 6px;
+      padding: 6px 8px;
+      pointer-events: none;
+    }
+
+    #panel{
+      position: absolute;
+      bottom: 20px;
+      left: 12px;
+      z-index: 999;
+      background: rgba(255,255,255,0.95);
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      padding: 10px;
+      width: 220px;
+    }
+
+    #panel .row{ margin-bottom: 8px; }
+    #panel label{ display:block; font-size:12px; margin-bottom:4px; }
+    #panel select{
+      width: 100%;
+      padding: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    #panel .row-btn{
+      display:flex;
+      gap: 8px;
+    }
+
+    #panel button{
+      flex:1;
+      padding: 7px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+    }
+
+    #panel button:hover{
+      background:#f3f3f3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="header">
+    Clasificación del Riesgo de Inundación por Parroquia en Zonas Lluviosas del Ecuador
+  </div>
+
+  <div id="panel">
+    <div class="row">
+      <label>Provincia</label>
+      <select id="selProvincia">
+        <option value="">-- Todas --</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label>Cantón</label>
+      <select id="selCanton">
+        <option value="">-- Todos --</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label>Parroquia</label>
+      <select id="selParroquia">
+        <option value="">-- Todas --</option>
+      </select>
+    </div>
+
+    <div class="row row-btn">
+      <button id="btnBuscar">Buscar</button>
+      <button id="btnReset">Reset</button>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="{{ url_for('static', filename='map.js') }}"></script>
+
+</body>
+</html>
